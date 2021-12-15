@@ -9,16 +9,12 @@ var removeElement = function(nums, val)
         for(let i = index ; i < nums.length ; i++)
         {
             if (nums[i] == val)
-            {
                 remove++;
-                nums[i] ='_';
-            }
             else if(nums[i] != val)
             {
                 for(let j = index ; j < nums.length - remove; j++)
                 {
                     nums[j] = nums[i];
-                    nums[i] ='_';
                     i++;
                 }
                 break;
