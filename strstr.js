@@ -1,15 +1,23 @@
 
-var strstr = function(haystack, needle)
-{
-    if(haystack.includes(needle))
-        return haystack.indexOf(needle);
-    return -1;
-}
 
+var strStr = function(haystack, needle) {
+    if(needle[0] == '\0')
+        return 0;
+    return haystack.indexOf(needle);
 
-console.log(strstr("hello","ll"));
-console.log("aaaa","bba");
-console.log(strstr("",""));
+};
+
+// var strstr = function(haystack, needle)
+// {
+//     if(haystack.includes(needle))
+//         return haystack.indexOf(needle);
+//     return -1;
+// }
+
+console.log(strStr("hello","ll"));
+console.log(strStr("hello","llaa"));
+console.log(strStr("aaaa","bba"));
+console.log(strStr("",""));
 /*
 
 Implement strStr().
