@@ -15,3 +15,5 @@ int main()
     std::cout << strStr("aaaa","bba") << "\n";
     std::cout << strStr("","") << "\n";
 }
+
+/* https://www.cplusplus.com/reference/string/string/find/ */
