@@ -1,27 +1,19 @@
 var removeElement = function(nums, val)
 {
- 
+    let remove = 0;
     nums.sort();
     let index = nums.indexOf(val);
-    let remove = 0;
-    if(index != -1)
+    for(let i = index; i < nums.length ; i++)
     {
-        for(let i = index ; i < nums.length ; i++)
-        {
-            if (nums[i] == val)
-                remove++;
-            else if(nums[i] != val)
-            {
-                for(let j = index ; j < nums.length - remove; j++)
-                {
-                    nums[j] = nums[i];
-                    i++;
-                }
-                break;
-            }
-        }
-    }
-    return nums.length - remove;
+        if(nums[i] == val)
+            remove++;
+        else
+            break;
+    }  
+    const ret = nums.length - remove;
+
+    nums.splice(index,remove);
+    return ret;
 }
 
 
@@ -29,11 +21,12 @@ let nums1 = [1];
 console.log(removeElement(nums1,1));
 console.log(nums1);
 
-
 let nums2 = [1,3,2,6,9,8,2,5,6,2,2];
 console.log(removeElement(nums2,2));
 console.log(nums2);
 
+
+/*  https://www.freecodecamp.org/news/javascript-splice-how-to-use-the-splice-js-array-method/  */
 /*
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
 
