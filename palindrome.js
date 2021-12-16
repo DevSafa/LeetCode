@@ -1,31 +1,20 @@
 
-var numberNumbers = function(x){
-
-    let  count = 0 ;
-    while(Math.floor(x) / 10 != 0)
-    {
-        x = x / 10;
-        count++;
-    }
-    return count - 1;
-}
-
 var isPalindrome = function(x) {
 
     if(x < 0)
         return false
-    let  count = numberNumbers(x);
     let y = x;
     let result = 0;
-    while( count >= 0)
+    while(y / 10 != 0)
     {
-        result = result + (y % 10) * Math.pow(10,count)
-        count--;
+        result = result*10 + (y % 10) ;
         y = Math.floor(y / 10);
+
     }
     if(x != result)
         return false;
     return true;
+
 };
 
 console.log(isPalindrome(123568)); 
